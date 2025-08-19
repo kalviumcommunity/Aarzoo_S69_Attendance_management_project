@@ -35,3 +35,14 @@ java -cp src com.school.Main
 
 ### Output
 Welcome to the Attendance Management Project!
+
+## Part 2 – Core Domain Modelling
+
+### What I added
+- `src/com/school/Student.java` – basic Student model (id, name, email)
+- `src/com/school/Course.java` – basic Course model (code, title, capacity + simple seat allocation)
+- Updated `src/com/school/Main.java` to create arrays of Students and Courses, loop through them, and print details
+
+### How to compile
+```bash
+javac src/com/school/*.java
