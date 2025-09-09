@@ -1,29 +1,28 @@
 package com.school;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        // Create arrays
-        Student[] students = new Student[2];
-        Course[] courses = new Course[2];
+        Student s1 = new Student(1, "Alice");
+        Student s2 = new Student(2, "Bob");
 
-        // Add students
-        students[0] = new Student(1, "Alice", 20);
-        students[1] = new Student(2, "Bob", 22);
+        Course c1 = new Course(101, "Mathematics");
+        Course c2 = new Course(102, "Science");
 
-        // Add courses
-        courses[0] = new Course("CS101", "Intro to CS", 4);
-        courses[1] = new Course("MATH201", "Calculus II", 3);
+        List<AttendanceRecord> attendanceLog = new ArrayList<>();
 
-        // Display all students
-        System.out.println("---- Students ----");
-        for (Student s : students) {
-            s.displayInfo();
-        }
+        AttendanceRecord ar1 = new AttendanceRecord(s1.getStudentId(), c1.getCourseId(), "Present");
+        AttendanceRecord ar2 = new AttendanceRecord(s2.getStudentId(), c2.getCourseId(), "Absent");
+        AttendanceRecord ar3 = new AttendanceRecord(s1.getStudentId(), c2.getCourseId(), "Late"); // invalid
 
-        // Display all courses
-        System.out.println("\n---- Courses ----");
-        for (Course c : courses) {
-            c.displayInfo();
+        attendanceLog.add(ar1);
+        attendanceLog.add(ar2);
+        attendanceLog.add(ar3);
+
+        for (AttendanceRecord ar : attendanceLog) {
+            ar.displayRecord();
         }
     }
 }

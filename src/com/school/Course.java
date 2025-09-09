@@ -2,24 +2,22 @@ package com.school;
 
 public class Course {
     private int courseId;
-    private String title;
-    private int credits;
-    private static int nextCourseIdCounter = 101;
+    private String courseName;
 
-    // Constructor with title and credits (ID auto-generated)
-    public Course(String title, int credits) {
-        this.courseId = nextCourseIdCounter++;
-        this.title = title;
-        this.credits = credits;
+    public Course(int courseId, String courseName) {
+        this.courseId = courseId;
+        this.courseName = courseName;
     }
 
-    // Getters
-    public int getCourseId() { return courseId; }
-    public String getTitle() { return title; }
-    public int getCredits() { return credits; }
+    public int getCourseId() {
+        return courseId;
+    }
 
-    // Method to display course details
-    public void displayInfo() {
-        System.out.println("Course ID: C" + courseId + ", Title: " + title + ", Credits: " + credits);
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void displayCourse() {
+        System.out.println("Course ID: " + courseId + ", Name: " + courseName);
     }
 }
