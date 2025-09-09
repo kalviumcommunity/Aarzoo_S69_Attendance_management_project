@@ -3,23 +3,21 @@ package com.school;
 public class Student {
     private int studentId;
     private String name;
-    private int age;
-    private static int nextStudentIdCounter = 1;
 
-    // Constructor with name and age (ID auto-generated)
-    public Student(String name, int age) {
-        this.studentId = nextStudentIdCounter++;
+    public Student(int studentId, String name) {
+        this.studentId = studentId;
         this.name = name;
-        this.age = age;
     }
 
-    // Getters
-    public int getStudentId() { return studentId; }
-    public String getName() { return name; }
-    public int getAge() { return age; }
+    public int getStudentId() {
+        return studentId;
+    }
 
-    // Method to display student details
-    public void displayInfo() {
-        System.out.println("Student ID: S" + studentId + ", Name: " + name + ", Age: " + age);
+    public String getName() {
+        return name;
+    }
+
+    public void displayStudent() {
+        System.out.println("Student ID: " + studentId + ", Name: " + name);
     }
 }
