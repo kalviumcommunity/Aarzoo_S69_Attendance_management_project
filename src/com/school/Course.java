@@ -1,32 +1,25 @@
 package com.school;
 
-/**
- * Represents a course in the attendance system.
- */
 public class Course {
-    private final String code;
-    private final String title;
-    private int capacity; // simple field to show a core property
+    private int courseId;
+    private String title;
+    private int credits;
+    private static int nextCourseIdCounter = 101;
 
-    public Course(String code, String title, int capacity) {
-        this.code = code;
+    // Constructor with title and credits (ID auto-generated)
+    public Course(String title, int credits) {
+        this.courseId = nextCourseIdCounter++;
         this.title = title;
-        this.capacity = capacity;
+        this.credits = credits;
     }
 
     // Getters
-    public String getCode()   { return code; }
-    public String getTitle()  { return title; }
-    public int getCapacity()  { return capacity; }
+    public int getCourseId() { return courseId; }
+    public String getTitle() { return title; }
+    public int getCredits() { return credits; }
 
-    // Simple behavior for demonstration
-    public boolean hasSeat() { return capacity > 0; }
-    public void allocateSeat() {
-        if (capacity > 0) capacity--;
-    }
-
-    @Override
-    public String toString() {
-        return "Course{code='" + code + "', title='" + title + "', capacity=" + capacity + "}";
+    // Method to display course details
+    public void displayInfo() {
+        System.out.println("Course ID: C" + courseId + ", Title: " + title + ", Credits: " + credits);
     }
 }
