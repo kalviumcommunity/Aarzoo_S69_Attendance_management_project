@@ -1,26 +1,25 @@
 package com.school;
 
-/**
- * Represents a student in the attendance system.
- */
 public class Student {
-    private final int id;
-    private final String name;
-    private final String email;
+    private int studentId;
+    private String name;
+    private int age;
+    private static int nextStudentIdCounter = 1;
 
-    public Student(int id, String name, String email) {
-        this.id = id;
+    // Constructor with name and age (ID auto-generated)
+    public Student(String name, int age) {
+        this.studentId = nextStudentIdCounter++;
         this.name = name;
-        this.email = email;
+        this.age = age;
     }
 
-    // Getters (read-only access to fields)
-    public int getId()    { return id; }
-    public String getName(){ return name; }
-    public String getEmail(){ return email; }
+    // Getters
+    public int getStudentId() { return studentId; }
+    public String getName() { return name; }
+    public int getAge() { return age; }
 
-    @Override
-    public String toString() {
-        return "Student{id=" + id + ", name='" + name + "', email='" + email + "'}";
+    // Method to display student details
+    public void displayInfo() {
+        System.out.println("Student ID: S" + studentId + ", Name: " + name + ", Age: " + age);
     }
 }
